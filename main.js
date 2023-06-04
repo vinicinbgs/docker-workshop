@@ -3,7 +3,7 @@ const http = require('node:http');
 // Create an HTTP server
 const server = http.createServer((req, res) => {
   res.writeHead(200, { 'Content-Type': 'text/plain' });
-  console.log("passei por aqui")
+  console.log("passei por aqui");
   res.end('okay');
 });
 
