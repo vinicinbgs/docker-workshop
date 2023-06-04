@@ -6,6 +6,6 @@ services:
       context: . # pasta onde esta o dockerfile
       dockerfile: Dockerfile # arquivo de receita para criar a imagem
     ports:
-      - "8080:80" # Porta 8080 da maquina host (minha maquina) equivale a porta 80 do container
+      - "8080:8080" # Porta 8080 da maquina host (minha maquina) equivale a porta 80 do container
     volumes: # formato dinamico para transferencia de arquivos entre o host e o container
-      - .:/var/www
+      - .:/usr/app

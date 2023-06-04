@@ -15,3 +15,9 @@
 ### Container
 
 É a instância de uma imagem, ou seja, é a imagem em execução.
+
+
+O que é o NODEJS
+
+Nodejs é uma plataforma ele não é uma linguagem de programação
+
