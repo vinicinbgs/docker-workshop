@@ -5,7 +5,28 @@ services:
     build:
       context: . # pasta onde esta o dockerfile
       dockerfile: Dockerfile # arquivo de receita para criar a imagem
+    restart: always
     ports:
       - "8080:8080" # Porta 8080 da maquina host (minha maquina) equivale a porta 80 do container
     volumes: # formato dinamico para transferencia de arquivos entre o host e o container
       - .:/usr/app
+    networks:
+      - default
+
+  postgres:
+    image: postgres:15.3-alpine3.18
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: default
+    ports:
+      - "5432:5432"
+    volumes:
+      - /var/lib/postgresql/data
+    networks:
+      - default
+
+
+networks:
+  default:
+    name: default

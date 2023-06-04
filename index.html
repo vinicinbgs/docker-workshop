@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="form">
+        <label>Login</label>
+        <input type="text" name="login">
+        <label>Password</label>
+        <input type="text" name="password">
+        <button id="submit" type="button">Entrar</button>
+    </form>
+</body>
+<script>
+
+    const btn = document.getElementById("submit");
+
+    btn.addEventListener('click', submit);
+
+    function submit(e) {
+        e.preventDefault();
+
+        fetch('http://localhost:8080', {
+            method: 'POST',
+            mode: "no-cors",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                login: document.querySelector('input[name="login"]').value,
+                password: document.querySelector('input[name="password"]').value
+            })
+        })
+    }
+</script>
+</html>
